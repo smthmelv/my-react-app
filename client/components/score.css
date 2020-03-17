@@ -1,0 +1,36 @@
+.App {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.App_score {
+    color: #0ea109;
+    font-size: 30px;
+    line-height: 60px;
+    font-weight: bold;
+}
+
+.App_button {
+    background: #3498db;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 8px 25px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 5px;
+}
+
+.App_button_reset {
+    background: #cc0707;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 8px 25px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 5px;
+}
+  
