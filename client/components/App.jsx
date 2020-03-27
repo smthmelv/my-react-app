@@ -28,9 +28,6 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => {
-    // return {
-    //     getData: () => dispatch(getData())
-    // }
     return bindActionCreators({
         getTypes
     }, dispatch);

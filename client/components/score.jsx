@@ -1,11 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
 import './score.css';
-import axios from 'axios';
 import Button from './button.jsx';
-
-// const GIT_USER = 'dhh';
-// const GIT_USER_URL = `https://api.github.com/users/dhh/events`;
 
 class Score extends Component {
   constructor(){
@@ -22,18 +18,6 @@ class Score extends Component {
 
   componentDidMount() {
     this.setState({ isLoading: true });
-
-    // axios.get(GIT_USER_URL)
-    //   .then(result => this.setState({
-    //     data: result.data.map(elem => {
-    //       return elem.type
-    //     }),
-    //     isLoading: false
-    //   }))
-    //   .catch(error => this.setState({
-    //     error,
-    //     isLoading: false
-    //   }));
   }
 
   printScore(data) {

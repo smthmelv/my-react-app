@@ -1,17 +1,42 @@
-const defaultState = {
-    types: []
+// import { combineReducers } from 'redux';
+import {
+    GET_LIST_SUCCESS,
+    GET_LIST_FAILURE,
+    GET_LIST_STARTED
+} from '../actions/actionTypes.js';
+
+const initialState = {
+    loading: false,
+    types: [],
+    error: null
 }
 
-function reducer(state = defaultState, action) {
-    switch(action.type){
-        case "TYPES":
-            return {
-                ...state,
-                types: action.payload
-            }
+function reducer(state = initialState, action) {
+    switch (action.type) {
+        case GET_LIST_STARTED:
+          return {
+            ...state,
+            loading: true
+          };
+        case GET_LIST_SUCCESS:
+          return {
+            ...state,
+            loading: false,
+            error: null,
+            types: [...state.types, action.data]
+          };
+        case GET_LIST_FAILURE:
+          return {
+            ...state,
+            loading: false,
+            error: action.data.error
+          };
         default:
-            return state
-    }
+          return state;
+      }
 }
 
 export default reducer
+// export default combineReducers({
+//     reducer
+// });

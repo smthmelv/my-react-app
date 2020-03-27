@@ -1,28 +1,39 @@
-import { TYPES } from '../client/actions/actionTypes';
+import {
+    GET_LIST_SUCCESS,
+    GET_LIST_FAILURE,
+    GET_LIST_STARTED
+} from '../client/actions/actionTypes';
 import axios from 'axios';
 
 const GIT_USER_URL = `https://api.github.com/users/dhh/events`;
+  
+export const getTypes = () => {
+    console.log("HERE");
+    return (dispatch, getState) => {
+        dispatch(getListStarted());
 
-function getTypeList(result) {
-    return {
-      type: TYPES,
-      data: result
+        axios
+        .get(GIT_USER_URL)
+        .then(res => {
+            throw new Error('NOT!');
+            // dispatch(getListSuccess(res.data));
+        })
+        .catch(err => {
+            dispatch(getListFailure(err.message));
+        });
     };
-}
+};
+  
+const getListSuccess = data => ({
+    type: GET_LIST_SUCCESS,
+    data
+});
 
-export function getTypes() {
-    console.log(axios.get(GIT_USER_URL))
-    return (dispatch) => {
-        axios.get(GIT_USER_URL)
-            .then(result => console.log(result))
-        //     // .then(result => dispatch(getTypeList(result)))
-        //     // .then(result => dispatch({
-        //     //     type: TYPES,
-        //     //     data: result
-        //     // }))
-            .catch(error => this.setState({
-                error,
-                isLoading: false
-            }));
-    }
-}
+const getListStarted = () => ({
+    type: GET_LIST_STARTED
+});
+
+const getListFailure = error => ({
+    type: GET_LIST_FAILURE,
+    data: error
+});
