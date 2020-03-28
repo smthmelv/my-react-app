@@ -1,4 +1,3 @@
-// console.log('Hey guys and ladies!!')
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App.jsx';
@@ -11,7 +10,7 @@ const store = createStore(
     reducer,
     compose(
         applyMiddleware(thunk),
-        window.devToolsExtension ? window.devToolsExtension() : f => f
+        window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f
     )
 );
 

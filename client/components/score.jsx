@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
 import './score.css';
 import Button from './button.jsx';
@@ -8,7 +7,6 @@ class Score extends Component {
     super();
 
     this.state = {
-      data: [],
       score: 0
     }
 
@@ -16,15 +14,10 @@ class Score extends Component {
     this.resetScore = this.resetScore.bind(this);
   }
 
-  componentDidMount() {
-    this.setState({ isLoading: true });
-  }
-
   printScore(data) {
-    const { isLoading } = this.state;
     let score = 0;
 
-    !isLoading && data.forEach(elem => {
+    data.forEach(elem => {
       switch(elem){
         case "PushEvent":
           score += 5;
@@ -58,14 +51,24 @@ class Score extends Component {
   }
 
   render() {
-    const { data, score } = this.state;
+    const { score } = this.state;
+    const { types } = this.props;
 
     return (
-      <div className="App">
+      <div className="Score_App">
+        <p className="App_score_txt_header">Score is added up by types that come back from data:<br/></p>
+        <p className="App_score_txt">
+          PushEvent <span className="App_score_pts">5pts</span><br/>
+          PullRequestReviewCommentEvent <span className="App_score_pts">4pts</span><br/>
+          WatchEvent <span className="App_score_pts">3pts</span><br/>
+          CreateEvent <span className="App_score_pts">2pts</span><br/>
+          All other types <span className="App_score_pts">1pt</span>
+        </p>
         <div className="App_score">
           {score === 0 ? "n/a" : score}
         </div>
-        <Button type="button" className="App_button" children="Get Score" onClick={this.printScore} data={data}/>
+        <br/>
+        <Button type="button" className="App_button" children="Get Score" onClick={this.printScore} data={types}/>
         <br/>
         <Button type="button" className="App_button_reset" children="Reset Score" onClick={this.resetScore}/>
       </div>
