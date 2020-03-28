@@ -33,5 +33,6 @@ module.exports = {
       }
     ]
   },
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [HtmlWebpackPluginConfig],
+  devtool: 'cheap-module-source-map'
 }
