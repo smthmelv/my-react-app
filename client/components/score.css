@@ -1,12 +1,12 @@
 .Score_App {
-    margin: 50px 0;
+    padding: 20px;
     text-align: center;
-    width: 683px;
+    background-color: #a7a7a7;
 }
 
 .App_score {
     color: #0ea109;
-    font-size: 30px;
+    font-size: 50px;
     line-height: 60px;
     font-weight: bold;
 }

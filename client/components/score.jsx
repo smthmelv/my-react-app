@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './score.css';
 import Button from './button.jsx';
+import { Container, Row, Col } from 'react-bootstrap';
 
 class Score extends Component {
   constructor(){
@@ -56,17 +57,25 @@ class Score extends Component {
 
     return (
       <div className="Score_App">
-        <p className="App_score_txt_header">Score is added up by types that come back from data:<br/></p>
-        <p className="App_score_txt">
-          PushEvent <span className="App_score_pts">5pts</span><br/>
-          PullRequestReviewCommentEvent <span className="App_score_pts">4pts</span><br/>
-          WatchEvent <span className="App_score_pts">3pts</span><br/>
-          CreateEvent <span className="App_score_pts">2pts</span><br/>
-          All other types <span className="App_score_pts">1pt</span>
-        </p>
-        <div className="App_score">
-          {score === 0 ? "n/a" : score}
-        </div>
+        <Container>
+          <Row>
+            <Col>
+              <p className="App_score_txt_header">Score is added up by types that come back from data:<br/></p>
+              <p className="App_score_txt">
+                PushEvent <span className="App_score_pts">5pts</span><br/>
+                PullRequestReviewCommentEvent <span className="App_score_pts">4pts</span><br/>
+                WatchEvent <span className="App_score_pts">3pts</span><br/>
+                CreateEvent <span className="App_score_pts">2pts</span><br/>
+                All other types <span className="App_score_pts">1pt</span>
+              </p>
+            </Col>
+            <Col>
+              <div className="App_score">
+                {score === 0 ? "n/a" : score}
+              </div>
+            </Col>
+          </Row>
+        </Container>
         <br/>
         <Button type="button" className="App_button" children="Get Score" onClick={this.printScore} data={types}/>
         <br/>
