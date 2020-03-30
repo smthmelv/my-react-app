@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './score.css';
+import { Col, Container, Row } from 'react-bootstrap';
 import Button from './button.jsx';
-import { Container, Row, Col } from 'react-bootstrap';
+import './score.css';
 
 class Score extends Component {
   constructor(){

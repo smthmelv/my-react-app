@@ -1,8 +1,4 @@
-import {
-    GET_LIST_SUCCESS,
-    GET_LIST_FAILURE,
-    GET_LIST_STARTED
-} from '../actions/actionTypes.js';
+import { GET_LIST_FAILURE, GET_LIST_STARTED, GET_LIST_SUCCESS } from '../actions/actionTypes.js';
 
 const initialState = {
     loading: false,

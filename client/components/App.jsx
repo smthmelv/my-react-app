@@ -22,7 +22,7 @@ class App extends React.Component {
                     <h1>The Random Display App</h1>
                 </div>
                 <Weather />
-                <Score types={this.props.types}/>
+                <Score types={types}/>
             </React.Fragment>
         );
     }

@@ -6,6 +6,13 @@
     padding: 10px;
 }
 
-.Weather_App_txt {
+.App_weather_txt {
     color: white;
+}
+
+.App_weather_component {
+    align-items: center;
+    width: fit-content;
+    display: inline-flex;
+    color: burlywood;
 }
