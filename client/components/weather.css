@@ -1,0 +1,11 @@
+.Weather_App {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: midnightblue;
+    padding: 10px;
+}
+
+.Weather_App_txt {
+    color: white;
+}
