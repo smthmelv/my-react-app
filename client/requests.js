@@ -1,9 +1,5 @@
-import {
-    GET_LIST_SUCCESS,
-    GET_LIST_FAILURE,
-    GET_LIST_STARTED
-} from './actions/actionTypes';
 import axios from 'axios';
+import { GET_LIST_FAILURE, GET_LIST_STARTED, GET_LIST_SUCCESS } from './actions/actionTypes';
 
 const GIT_USER_URL = `https://api.github.com/users/dhh/events`;
   

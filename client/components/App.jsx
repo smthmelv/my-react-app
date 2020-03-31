@@ -1,9 +1,10 @@
 import React from 'react';
-import Score from './score.jsx';
-import './App.css';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getTypes } from '../requests.js';
+import './App.css';
+import Score from './score.jsx';
+import Weather from './weather.jsx';
 
 class App extends React.Component {
     componentDidMount() {
@@ -18,9 +19,10 @@ class App extends React.Component {
         return (
             <React.Fragment>
                 <div className="App_header">
-                    <h1>Hello World</h1>
+                    <h1>The Random Display App</h1>
                 </div>
-                <Score types={this.props.types}/>
+                <Weather />
+                <Score types={types}/>
             </React.Fragment>
         );
     }

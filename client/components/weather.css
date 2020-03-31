@@ -1,0 +1,18 @@
+.Weather_App {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: midnightblue;
+    padding: 10px;
+}
+
+.App_weather_txt {
+    color: white;
+}
+
+.App_weather_component {
+    align-items: center;
+    width: fit-content;
+    display: inline-flex;
+    color: burlywood;
+}
