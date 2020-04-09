@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Score from './Score';
+import App from '../components/App';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Score />, div);
+  ReactDOM.render(<App />, div);
 });
