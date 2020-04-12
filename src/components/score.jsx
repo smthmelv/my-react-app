@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import Button from './button.jsx';
+import Button from './common/button.jsx';
 import './score.css';
 
 class Score extends Component {
