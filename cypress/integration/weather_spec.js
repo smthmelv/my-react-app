@@ -1,6 +1,15 @@
 describe('The Weather App Component', () => {
     it('successfully loads', () => {
-        cy.visit('/') // change URL to match your dev URL
+        cy.visit('/')
+    })
+
+    it('successfully calls weather request', () => {
+        cy.request('GET', 'https://api.openweathermap.org/data/2.5/weather?q=Omaha,US&appid=5f24adf9b82f6919270d8d3e8abefcc3&units=imperial&mode=html')
+            // .its('body')
+            // .as('data')
+        .then((resp) => {
+            expect(resp.status).to.eq(200)
+        })
     })
 
     let $cols
