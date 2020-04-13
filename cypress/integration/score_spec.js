@@ -1,6 +1,13 @@
 describe('The Score App Component', () => {
     it('successfully loads', () => {
-        cy.visit('/') // change URL to match your dev URL
+        cy.visit('/')
+    })
+
+    it('successfully calls score data request', () => {
+        cy.request('GET', 'https://api.github.com/users/dhh/events')
+        .then((resp) => {
+            expect(resp.status).to.eq(200)
+        })
     })
 
     it('renders both columns', () => {
